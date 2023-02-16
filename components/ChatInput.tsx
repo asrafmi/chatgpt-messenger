@@ -55,7 +55,7 @@ function ChatInput({chatId}: Props) {
             prompt: input, chatId, model, session
         })
     }).then((res) => {
-        if (res.status === 204 || res.status === 504) {
+        if (res.status === 503 || res.status === 504) {
             // Toaster to say retry
             toast.error("Maap, ChatGPT belum bisa jawab itu :(", {
                 duration: 6000,

@@ -47,7 +47,7 @@ export default async function handler(
   .add(message)
 
   if(message.text === errResponse) {
-    res.status(204).end()
+    res.status(503).json({ answer: errResponse})
   } else {
     res.status(200).json({ answer: message.text})
   }
