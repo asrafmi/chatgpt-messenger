@@ -45,7 +45,7 @@ export default async function handler(
   .doc(chatId)
   .collection("messages")
   .add(message)
-
+  
   if(message.text === errResponse) {
     res.status(503).json({ answer: errResponse})
   } else {
