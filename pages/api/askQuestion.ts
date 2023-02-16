@@ -24,9 +24,11 @@ export default async function handler(
 
   // ChatGPT Query
   const response = await query(prompt, chatId, model) 
+  
+  const errResponse = `ChatGPT bingung mau jawab apa, silahkan tanya lagi yak :(` 
 
   const message: Message = {
-    text: response || `Maap, ChatGPT belum bisa jawab itu :(`,
+    text: response || errResponse,
     createdAt: admin.firestore.Timestamp.now(),
     user: {
         _id: "ChatGPT",
@@ -44,5 +46,9 @@ export default async function handler(
   .collection("messages")
   .add(message)
 
-  res.status(200).json({ answer: message.text})
+  if(message.text === errResponse) {
+    res.status(204).end()
+  } else {
+    res.status(200).json({ answer: message.text})
+  }
 }

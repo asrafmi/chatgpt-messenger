@@ -54,11 +54,21 @@ function ChatInput({chatId}: Props) {
         body: JSON.stringify({
             prompt: input, chatId, model, session
         })
-    }).then(() => {
-        // Toaster to say succesful
-        toast.success("ChatGPT uda nemu jawabannya!", {
-            id: notification
-        })
+    }).then((res) => {
+        if (res.status === 204) {
+            // Toaster to say retry
+            toast.error("Maap, ChatGPT belum bisa jawab itu :(", {
+                duration: 6000,
+                id: notification
+            })    
+        } else {
+            // Toaster to say succesful
+            toast.error("ChatGPT uda nemu jawabannya!", {
+                duration: 6000,
+                id: notification
+            })
+        }
+
     })
   }
   return (
