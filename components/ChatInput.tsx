@@ -63,7 +63,7 @@ function ChatInput({chatId}: Props) {
             })    
         } else {
             // Toaster to say succesful
-            toast.error("ChatGPT uda nemu jawabannya!", {
+            toast.success("ChatGPT uda nemu jawabannya!", {
                 duration: 6000,
                 id: notification
             })
