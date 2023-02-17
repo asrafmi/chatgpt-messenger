@@ -23,7 +23,7 @@ export default async function handler(
   }
 
   // ChatGPT Query
-  const response = await query(prompt, chatId, model) 
+  const response = await query(prompt, chatId, model)
   
   const errResponse = `ChatGPT bingung mau jawab apa, silahkan tanya lagi yak :(` 
 

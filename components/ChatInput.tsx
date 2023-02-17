@@ -68,7 +68,7 @@ function ChatInput({chatId}: Props) {
                 id: notification
             })
         }
-
+        
     })
   }
   return (
