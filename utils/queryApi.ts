@@ -10,7 +10,12 @@ const query = async(prompt: string, chatId: string, model: string) => {
         frequency_penalty: 0,
         presence_penalty: 0,
     })
-    .then((res) => res.data.choices[0].text)
+    .then((res) => {
+        if (!res.data) {
+            throw new Error("Chat GPT bingung mau jawab apa :(");
+        }
+        return res.data.choices[0].text
+    })
     .catch((err) => `Maap, ChatGPT belum bisa jawab itu :( (Error:${err.message})`)
 
     return res
