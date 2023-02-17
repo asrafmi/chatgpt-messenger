@@ -58,13 +58,13 @@ function SideBar() {
 
             </div>
         </div>
-        <Link href={`https://github.com/asrafmi/`} className={`chatRow justify-center `}>
+        <Link target={"_blank"} href={`https://github.com/asrafmi/`} className={`chatRow justify-center `}>
         <FaGithub className="h-5 w-5" />
         <p className="flex-1 hidden md:inline-flex truncate">
             Github
         </p>
         </Link>
-        <Link href={`https://www.linkedin.com/in/asrafmi/`} className={`chatRow justify-center `}>
+        <Link target={"_blank"} href={`https://www.linkedin.com/in/asrafmi/`} className={`chatRow justify-center `}>
         <FaLinkedin className="h-5 w-5" />
         <p className="flex-1 hidden md:inline-flex truncate">
             LinkedIn
