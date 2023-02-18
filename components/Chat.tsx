@@ -25,10 +25,10 @@ function Chat({ chatId }: Props) {
     <div className="flex-1 overflow-y-auto overflow-x-hidden">
       {messages?.empty && (
         <>
-          <p className="mt-10 text-center text-white">
+          <p className="mt-10 text-center text-gray-800 dark:text-white">
             Ketik apa saja yang ingin kamu tanyakan broo!
           </p>
-          <ArrowDownCircleIcon className="h-10 w-10 mx-auto mt-5 text-white animate-bounce"/>
+          <ArrowDownCircleIcon className="h-10 w-10 mx-auto mt-5 text-gray-800 dark:text-white animate-bounce"/>
         </>
       )}
       {messages?.docs.map((message) => (
