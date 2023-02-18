@@ -1,3 +1,5 @@
+"use client"
+
 import { DocumentData } from "firebase/firestore"
 import { useState } from "react"
 import MovingComponent from "react-moving-text"
@@ -16,8 +18,8 @@ function Message({ message }: Props) {
   }
 
   return (
-    <div className={`py-5 text-white ${isChatGPT && "bg-[#434654]"}`}>
-        <div className="flex space-x-5 px-10 max-w-2xl mx-auto">
+    <div className={`py-5 border-b border-black/10 dark:text-white light:text-gray-800 dark:border-gray-900/50 ${isChatGPT && "dark:bg-[#434654] bg-gray-50"}`}>
+        <div className="flex text-sm space-x-5 px-10 max-w-2xl mx-auto">
             <img src={message.user.avatar || "https://links.papareact.com/2i6"} alt={message.user.name} className="h-8 w-8" />
             { isChatGPT ? (
               <Typewriter words={[message.text]} typeSpeed={50} onLoopDone={handleDone}/>

@@ -1,8 +1,10 @@
+"use client"
+
 import { BoltIcon, ExclamationTriangleIcon, SunIcon } from '@heroicons/react/24/outline'
 
 function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen px-2 text-white">
+    <div className="flex flex-col items-center justify-center h-screen px-2 dark:text-white light:text-gray-800">
         <h1 className="text-5xl font-bold mb-20">ChatGPT</h1>
         <div className='flex space-x-2 text-center'>
             <div>

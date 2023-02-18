@@ -5,6 +5,7 @@ import '../styles/globals.css'
 import { authOptions } from '../pages/api/auth/[...nextauth]'
 import Login from '../components/Login'
 import ClientProvider from '../components/ClientProvider'
+import Providers from './Providers'
 
 export default async function RootLayout({
   children,
@@ -16,24 +17,25 @@ export default async function RootLayout({
   
   return (
     <html>
-      <head />
-      <body>
-        <SessionProvider session={session}>
-          {!session ? (
-              <Login/>
-            ): (
-            <div className='flex'>
-                <div className='bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'>
-                  <SideBar/> 
-                </div>
-                {/* ClientProvider- Notification */}
-                <ClientProvider/>
+      <Providers>
+        <body>
+          <SessionProvider session={session}>
+            {!session ? (
+                <Login/>
+              ): (
+              <div className='flex'>
+                  <div className='bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'>
+                    <SideBar/> 
+                  </div>
+                  {/* ClientProvider- Notification */}
+                  <ClientProvider/>
 
-                <div className='bg-[#343541] flex-1'>{children}</div>
-            </div>
-            )}
-        </SessionProvider> 
+                  <div className='bg-gray-100 dark:bg-[#343541] flex-1'>{children}</div>
+              </div>
+              )}
+          </SessionProvider> 
         </body>
+      </Providers>
     </html>
   )
 }
