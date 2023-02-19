@@ -6,9 +6,9 @@ function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center h-screen px-2 dark:text-white light:text-gray-800">
         <h1 className="text-5xl font-bold mb-20">ChatGPT</h1>
-        <div className='flex space-x-2 text-center'>
+        <div className='flex max-[640px]:flex-col space-x-2 text-center'>
             <div>
-                <div className="flex flex-col items-center justify-center mb-5">
+                <div className="flex flex-col items-center justify-center mt-5 mb-1">
                     {/* Sun Icon */}
                     <SunIcon className="h-8 w-8"/>
                     <h2>Examples</h2>
@@ -21,7 +21,7 @@ function HomePage() {
             </div>
 
             <div>
-                <div className="flex flex-col items-center justify-center mb-5">
+                <div className="flex flex-col items-center justify-center mt-3 mb-1">
                     <BoltIcon className="h-8 w-8"/>
                     <h2>Capabilities</h2>
                 </div>
@@ -33,7 +33,7 @@ function HomePage() {
             </div>
 
             <div>
-                <div className="flex flex-col items-center justify-center mb-5">
+                <div className="flex flex-col items-center justify-center mt-3 mb-1">
                     <ExclamationTriangleIcon className="h-8 w-8"/>
                     <h2>Limitation</h2>
                 </div>
